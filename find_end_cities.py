@@ -45,14 +45,13 @@ def get_end_city_candidates(seed, center_x, center_z, radius=CITY_RADIUS):
 
 
 def main():
-    if len(sys.argv) < 4:
-        print("Usage: python find_end_cities.py <seed> <center_x> <center_z> [radius]")
-        print(f"Default radius: {CITY_RADIUS}")
-        sys.exit(1)
-    seed = int(sys.argv[1])
-    center_x = int(sys.argv[2])
-    center_z = int(sys.argv[3])
-    radius = int(sys.argv[4]) if len(sys.argv) > 4 else CITY_RADIUS
+    print("Input seed:", end=' ')
+    seed = int(input().strip())
+    print("Input X:", end=' ')
+    center_x = int(input().strip())
+    print("Input Z:", end=' ')
+    center_z = int(input().strip())
+    radius = CITY_RADIUS
 
     print(f"Finding End Cities for seed {seed} within {radius} blocks of ({center_x}, {center_z})...")
     cities = get_end_city_candidates(seed, center_x, center_z, radius)
